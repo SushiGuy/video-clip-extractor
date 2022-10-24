@@ -43,6 +43,9 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.labelOutputLengthLabel = new System.Windows.Forms.Label();
             this.labelOutputLength = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBoxPreview = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -52,10 +55,10 @@
             // textBox1
             // 
             this.textBox1.AccessibleName = "";
-            this.textBox1.Location = new System.Drawing.Point(176, 41);
+            this.textBox1.Location = new System.Drawing.Point(178, 41);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(313, 20);
+            this.textBox1.Size = new System.Drawing.Size(311, 20);
             this.textBox1.TabIndex = 0;
             // 
             // label1
@@ -70,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 96);
+            this.label2.Location = new System.Drawing.Point(41, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 2;
@@ -79,7 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 122);
+            this.label3.Location = new System.Drawing.Point(52, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 3;
@@ -87,20 +90,22 @@
             // 
             // textBoxFrom
             // 
-            this.textBoxFrom.Location = new System.Drawing.Point(100, 93);
+            this.textBoxFrom.Location = new System.Drawing.Point(100, 67);
             this.textBoxFrom.Name = "textBoxFrom";
-            this.textBoxFrom.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFrom.Size = new System.Drawing.Size(72, 20);
             this.textBoxFrom.TabIndex = 4;
             this.textBoxFrom.Text = "00:00:00";
             this.textBoxFrom.Click += new System.EventHandler(this.textBoxFrom_Click);
+            this.textBoxFrom.TextChanged += new System.EventHandler(this.textBoxFrom_TextChanged);
             // 
             // textBoxTo
             // 
-            this.textBoxTo.Location = new System.Drawing.Point(100, 119);
+            this.textBoxTo.Location = new System.Drawing.Point(100, 93);
             this.textBoxTo.Name = "textBoxTo";
-            this.textBoxTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTo.Size = new System.Drawing.Size(72, 20);
             this.textBoxTo.TabIndex = 5;
             this.textBoxTo.Text = "00:00:00";
+            this.textBoxTo.Click += new System.EventHandler(this.textBoxTo_Click);
             this.textBoxTo.TextChanged += new System.EventHandler(this.textBoxTo_TextChanged);
             // 
             // label0
@@ -116,16 +121,16 @@
             // 
             this.button1.Location = new System.Drawing.Point(100, 41);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 20);
+            this.button1.Size = new System.Drawing.Size(72, 20);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Select";
+            this.button1.Text = "Select File";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(206, 96);
+            this.label5.Location = new System.Drawing.Point(178, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 13);
             this.label5.TabIndex = 8;
@@ -134,7 +139,7 @@
             // labelOutputFileLabel
             // 
             this.labelOutputFileLabel.AutoSize = true;
-            this.labelOutputFileLabel.Location = new System.Drawing.Point(39, 150);
+            this.labelOutputFileLabel.Location = new System.Drawing.Point(39, 142);
             this.labelOutputFileLabel.Name = "labelOutputFileLabel";
             this.labelOutputFileLabel.Size = new System.Drawing.Size(55, 13);
             this.labelOutputFileLabel.TabIndex = 9;
@@ -143,7 +148,7 @@
             // labelOutputFile
             // 
             this.labelOutputFile.AutoSize = true;
-            this.labelOutputFile.Location = new System.Drawing.Point(97, 150);
+            this.labelOutputFile.Location = new System.Drawing.Point(97, 142);
             this.labelOutputFile.Name = "labelOutputFile";
             this.labelOutputFile.Size = new System.Drawing.Size(59, 13);
             this.labelOutputFile.TabIndex = 10;
@@ -162,7 +167,7 @@
             // labelOutputLengthLabel
             // 
             this.labelOutputLengthLabel.AutoSize = true;
-            this.labelOutputLengthLabel.Location = new System.Drawing.Point(23, 172);
+            this.labelOutputLengthLabel.Location = new System.Drawing.Point(23, 120);
             this.labelOutputLengthLabel.Name = "labelOutputLengthLabel";
             this.labelOutputLengthLabel.Size = new System.Drawing.Size(71, 13);
             this.labelOutputLengthLabel.TabIndex = 12;
@@ -171,17 +176,48 @@
             // labelOutputLength
             // 
             this.labelOutputLength.AutoSize = true;
-            this.labelOutputLength.Location = new System.Drawing.Point(97, 172);
+            this.labelOutputLength.Location = new System.Drawing.Point(97, 120);
             this.labelOutputLength.Name = "labelOutputLength";
             this.labelOutputLength.Size = new System.Drawing.Size(75, 13);
             this.labelOutputLength.TabIndex = 13;
             this.labelOutputLength.Text = "[output length]";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(100, 236);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(72, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Extract Clip";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBoxPreview
+            // 
+            this.textBoxPreview.Location = new System.Drawing.Point(100, 160);
+            this.textBoxPreview.Multiline = true;
+            this.textBoxPreview.Name = "textBoxPreview";
+            this.textBoxPreview.ReadOnly = true;
+            this.textBoxPreview.Size = new System.Drawing.Size(441, 70);
+            this.textBoxPreview.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(52, 163);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Preview";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 228);
+            this.ClientSize = new System.Drawing.Size(554, 271);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxPreview);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.labelOutputLength);
             this.Controls.Add(this.labelOutputLengthLabel);
             this.Controls.Add(this.buttonClear);
@@ -220,6 +256,9 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Label labelOutputLengthLabel;
         private System.Windows.Forms.Label labelOutputLength;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBoxPreview;
+        private System.Windows.Forms.Label label4;
     }
 }
 
